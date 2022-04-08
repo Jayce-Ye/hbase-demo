@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<!-- 指定NameNode的地址 -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://node-etl-01:8020</value>
+</property>
+<!-- 指定hadoop数据的存储目录 -->
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/opt/module/hadoop-3.1.3/data</value>
+</property>
+
+<!-- 配置HDFS网页登录使用的静态用户为atguigu -->
+    <property>
+        <name>hadoop.http.staticuser.user</name>
+        <value>root</value>
+</property>
+
+<!-- 配置该atguigu(superUser)允许通过代理访问的主机节点 -->
+    <property>
+        <name>hadoop.proxyuser.root.hosts</name>
+        <value>*</value>
+</property>
+<!-- 配置该atguigu(superUser)允许通过代理用户所属组 -->
+    <property>
+        <name>hadoop.proxyuser.root.groups</name>
+        <value>*</value>
+</property>
+<!-- 配置该atguigu(superUser)允许通过代理的用户-->
+    <property>
+        <name>hadoop.proxyuser.root.users</name>
+        <value>*</value>
+</property>
+ <property>
+        <name>io.compression.codecs</name>
+        <value>
+            org.apache.hadoop.io.compress.GzipCodec,
+            org.apache.hadoop.io.compress.DefaultCodec,
+            org.apache.hadoop.io.compress.BZip2Codec,
+            org.apache.hadoop.io.compress.SnappyCodec,
+            com.hadoop.compression.lzo.LzoCodec,
+            com.hadoop.compression.lzo.LzopCodec
+        </value>
+    </property>
+
+    <property>
+        <name>io.compression.codec.lzo.class</name>
+        <value>com.hadoop.compression.lzo.LzoCodec</value>
+    </property>
+</configuration>

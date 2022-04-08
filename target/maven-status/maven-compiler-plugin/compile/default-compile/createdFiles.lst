@@ -1,0 +1,3 @@
+com\kaikeba\HBaseMR$HBaseMapper.class
+com\kaikeba\HBaseMR$HbaseReducer.class
+com\kaikeba\HBaseMR.class
